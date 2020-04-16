@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculate Area and Circumference of a Circle</title>
+  </head>
+  
+  <body>
+
+  <label for = "radius">Please enter a Radius:</label>
+  <input type = "text" id = "radius" name = "radius"><br><br>
+
+<button onclick = "Click()">Calculate</button>
+
+<br><br>
+
+<print>Area of circle is:</print>
+
+<div id = "arearesult"></div>
+
+<br>
+
+<print>Circumference of circle is:</print>
+
+<div id = "circumferenceresult"></div>
+</body>
+<script>
+let arearesult = document.getElementById("arearesult");
+let circumferenceresult = document.getElementById("circumferenceresult");
+function Click(){
+  let radius = document.getElementById("radius");
+  let radiusValue;
+  radiusValue = Number(radius.value);
+  if (radiusValue <= 0 || isNaN(radiusValue)) {
+    arearesult.innerHTML = "invalid radius";
+    circumferenceresult.innerHTML = "invalid radius";
+  }
+  else{
+    let area;
+    area = (radiusValue ** 2) * Math.PI;
+    let circumference;
+    circumference = (radiusValue * 2) * Math.PI;
+    arearesult.innerHTML = area;
+    circumferenceresult.innerHTML = circumference;
+}
+}
+</script>
+  
+</html>
