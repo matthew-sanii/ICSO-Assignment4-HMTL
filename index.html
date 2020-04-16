@@ -12,44 +12,16 @@
   <body>
   <p1 id="mytext">Area and Circumference of a Circle Calculator</p1> <!-- This is the headline you see when you open the website -->
   <br><br>
-  <label for = "diameter">Please enter a diameter:</label> <!-- This line of code asks you to input the diameter -->
-  <input type = "text" id = "diameter" name = "diameter"><br><br> <!-- This line of code is where you input the diameter -->
-
-<button onclick = "Click()">Calculate</button> <!-- this line of code triggers the javascript Click function when the button is clicked -->
-
+  <label for="diameter">Please enter a diameter:</label> <!-- This line of code asks you to input the diameter -->
+  <input type="text" id="diameter" name="diameter"><br><br> <!-- This line of code is where you input the diameter -->
+<button onclick="Click()">Calculate</button> <!-- this line of code triggers the javascript Click function when the button is clicked -->
 <br><br>
-
-<print>The Area of the circle is:</print> 
-
-<div id = "arearesult"></div> <!-- This is where the area of the circle is shown after being calculated -->
-
+<print>The Area of the circle is:</print>
+<div id="arearesult"></div> <!-- This is where the area of the circle is shown after being calculated -->
 <br>
-
 <print>The Circumference of the circle is:</print>
-
-<div id = "circumferenceresult"></div> <!-- This is where the circumference of the circle is shown after being calculated -->
+<div id="circumferenceresult"></div> <!-- This is where the circumference of the circle is shown after being calculated -->
 </body>
-<script>
-let arearesult = document.getElementById("arearesult");
-let circumferenceresult = document.getElementById("circumferenceresult");
-function Click(){
-  let diameter = document.getElementById("diameter");
-  let diameterValue;
-  diameterValue = Number(diameter.value); // This turns the diameter you input earlier from a string to a number
-  let radiusValue;
-  radiusValue = diameterValue / 2; // This finds out the radius by dividing the diameter by two for the calculations
-  if (diameterValue <= 0 || isNaN(diameterValue)) { // This if statement checks to see if the diameter is less than 0, or had a letter in it when the button was clicked
-    arearesult.innerHTML = "Invalid diameter, please input new diameter"; // These two lines of code return that the diameter was invalid, and asks for a new diameter value
-    circumferenceresult.innerHTML = "Invalid diameter, please input new diameter";
-  }
-  else{
-    let area;
-    area = (radiusValue ** 2) * Math.PI; // This piece of code calculates the area of the circle using: radius squared multiplied by pi
-    let circumference;
-    circumference = (radiusValue * 2) * Math.PI; // This line of code calculates the circumference of the circle using: two multiplied by radius multiplied by pi
-    arearesult.innerHTML = area; // This line of code sends the value it found for the area of the circle to the area divresult
-    circumferenceresult.innerHTML = circumference; // This line of code sends the value it found for the circumference to the circumference divresult
-}
-}
-</script>
 </html>
+<script src="Click.js">
+</script>
