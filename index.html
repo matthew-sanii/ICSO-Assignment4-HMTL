@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Area and Circumference of a circle calulator">
+    <meta name="keywords" content="Text, Website">
+    <meta name="author" content="M.Sanii">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
     <title>Calculate Area and Circumference of a Circle</title>
   </head>
-  
+  <style>
+  #mytext {
+  font-family: verdana;
+  font-size: 150%;
+}
+</style>
   <body>
+  <p1 id="mytext">Area and Circumference of a Circle Calculator</p1>
+  <br><br>
+  <label for = "diameter">Please enter a diameter:</label> 
+  <input type = "text" id = "diameter" name = "diameter"><br><br>
 
-  <label for = "radius">Please enter a Radius:</label>
-  <input type = "text" id = "radius" name = "radius"><br><br>
-
-<button onclick = "Click()">Calculate</button>
+<button onclick = "Click()">Calculate</button> 
 
 <br><br>
 
-<print>Area of circle is:</print>
+<print>The Area of the circle is:</print> 
 
-<div id = "arearesult"></div>
+<div id = "arearesult"></div> 
 
 <br>
 
-<print>Circumference of circle is:</print>
+<print>The Circumference of the circle is:</print>
 
-<div id = "circumferenceresult"></div>
+<div id = "circumferenceresult"></div> 
 </body>
 <script>
 let arearesult = document.getElementById("arearesult");
 let circumferenceresult = document.getElementById("circumferenceresult");
 function Click(){
-  let radius = document.getElementById("radius");
+  let diameter = document.getElementById("diameter");
+  let diameterValue;
+  diameterValue = Number(diameter.value); // this turns the diameter you input earlier from a string to a number
   let radiusValue;
-  radiusValue = Number(radius.value);
-  if (radiusValue <= 0 || isNaN(radiusValue)) {
-    arearesult.innerHTML = "invalid radius";
-    circumferenceresult.innerHTML = "invalid radius";
+  radiusValue = diameterValue / 2; // this finds out the radius by dividing the diameter by two for the calculations
+  if (diameterValue <= 0 || isNaN(diameterValue)) { // this if statement checks to see if the diameter is less than 0, or had a letter in it when the button was clicked
+    arearesult.innerHTML = "Invalid diameter, please input new diameter"; // these two lines of code return that the diameter was invalid, and asks for a new diameter value
+    circumferenceresult.innerHTML = "Invalid diameter, please input new diameter";
   }
   else{
     let area;
@@ -44,5 +57,8 @@ function Click(){
 }
 }
 </script>
-  
 </html>
+<!-- this is where the circumference of the circle is shown --!>
+<!-- this is where you click after a diameter is input --!>
+<!-- this is where the area of the circle is shown --!>
+<!-- this is to input the diameter --!>
