@@ -2,37 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="text.css">
     <meta name="description" content="Area and Circumference of a circle calulator">
     <meta name="keywords" content="Text, Website">
     <meta name="author" content="M.Sanii">
     <meta name="viewport" content="width=device-width, initial scale=1.0">
     <title>Calculate Area and Circumference of a Circle</title>
   </head>
-  <style>
-  #mytext {
-  font-family: verdana;
-  font-size: 150%;
-}
-</style>
   <body>
-  <p1 id="mytext">Area and Circumference of a Circle Calculator</p1>
+  <p1 id="mytext">Area and Circumference of a Circle Calculator</p1> <!-- This is the headline you see when you open the website -->
   <br><br>
-  <label for = "diameter">Please enter a diameter:</label> 
-  <input type = "text" id = "diameter" name = "diameter"><br><br>
+  <label for = "diameter">Please enter a diameter:</label> <!-- This line of code asks you to input the diameter -->
+  <input type = "text" id = "diameter" name = "diameter"><br><br> <!-- This line of code is where you input the diameter -->
 
-<button onclick = "Click()">Calculate</button> 
+<button onclick = "Click()">Calculate</button> <!-- this line of code triggers the javascript Click function when the button is clicked -->
 
 <br><br>
 
 <print>The Area of the circle is:</print> 
 
-<div id = "arearesult"></div> 
+<div id = "arearesult"></div> <!-- This is where the area of the circle is shown after being calculated -->
 
 <br>
 
 <print>The Circumference of the circle is:</print>
 
-<div id = "circumferenceresult"></div> 
+<div id = "circumferenceresult"></div> <!-- This is where the circumference of the circle is shown after being calculated -->
 </body>
 <script>
 let arearesult = document.getElementById("arearesult");
@@ -40,25 +35,21 @@ let circumferenceresult = document.getElementById("circumferenceresult");
 function Click(){
   let diameter = document.getElementById("diameter");
   let diameterValue;
-  diameterValue = Number(diameter.value); // this turns the diameter you input earlier from a string to a number
+  diameterValue = Number(diameter.value); // This turns the diameter you input earlier from a string to a number
   let radiusValue;
-  radiusValue = diameterValue / 2; // this finds out the radius by dividing the diameter by two for the calculations
-  if (diameterValue <= 0 || isNaN(diameterValue)) { // this if statement checks to see if the diameter is less than 0, or had a letter in it when the button was clicked
-    arearesult.innerHTML = "Invalid diameter, please input new diameter"; // these two lines of code return that the diameter was invalid, and asks for a new diameter value
+  radiusValue = diameterValue / 2; // This finds out the radius by dividing the diameter by two for the calculations
+  if (diameterValue <= 0 || isNaN(diameterValue)) { // This if statement checks to see if the diameter is less than 0, or had a letter in it when the button was clicked
+    arearesult.innerHTML = "Invalid diameter, please input new diameter"; // These two lines of code return that the diameter was invalid, and asks for a new diameter value
     circumferenceresult.innerHTML = "Invalid diameter, please input new diameter";
   }
   else{
     let area;
-    area = (radiusValue ** 2) * Math.PI;
+    area = (radiusValue ** 2) * Math.PI; // This piece of code calculates the area of the circle using: radius squared multiplied by pi
     let circumference;
-    circumference = (radiusValue * 2) * Math.PI;
-    arearesult.innerHTML = area;
-    circumferenceresult.innerHTML = circumference;
+    circumference = (radiusValue * 2) * Math.PI; // This line of code calculates the circumference of the circle using: two multiplied by radius multiplied by pi
+    arearesult.innerHTML = area; // This line of code sends the value it found for the area of the circle to the area divresult
+    circumferenceresult.innerHTML = circumference; // This line of code sends the value it found for the circumference to the circumference divresult
 }
 }
 </script>
 </html>
-<!-- this is where the circumference of the circle is shown --!>
-<!-- this is where you click after a diameter is input --!>
-<!-- this is where the area of the circle is shown --!>
-<!-- this is to input the diameter --!>
