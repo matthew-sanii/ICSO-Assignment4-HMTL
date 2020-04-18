@@ -1,6 +1,4 @@
 // JavaScript File
-
-
 let arearesult=document.getElementById("arearesult");
 let circumferenceresult=document.getElementById("circumferenceresult");
 function Click(){
